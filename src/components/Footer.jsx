@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <footer className=" bg-base-200 text-base-content p-10 ">
+    <footer className=" bg-base-200 text-base-content p-10 mt-5">
       <div className="footer mx-auto flex justify-between">
         <div>
-          <h2 className="text-xl font-bold">MyCompany</h2>
+          <h2 className="text-xl font-bold">AFX</h2>
           <p className="opacity-70">
-            Sizning loyihangiz uchun sifatli xizmatlar.
+            Alisherov Fayzullo
             <br /> © {new Date().getFullYear()} Barcha huquqlar himoyalangan.
           </p>
         </div>

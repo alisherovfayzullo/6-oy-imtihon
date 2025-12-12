@@ -3,8 +3,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 function App() {
+  const [dark, setDark] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const toggleTheme = () => setDark(!dark);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -15,12 +18,12 @@ function App() {
       });
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading..........</p>;
 
   return (
-    <>
-      <Navbar />
-      <div className="container grid grid-cols-3 gap-3 m-auto">
+    <div data-theme={dark ? "dark" : "light"}>
+      <Navbar toggleTheme={toggleTheme} dark={dark} />
+      <div className="container grid grid-cols-3 gap-3 m-auto mt-5">
         {data.map((item) => (
           <div key={item.id} className="border w-[250px] p-2 rounded-lg">
             <h2>
@@ -35,8 +38,9 @@ function App() {
           </div>
         ))}
       </div>
+
       <Footer />
-    </>
+    </div>
   );
 }
 

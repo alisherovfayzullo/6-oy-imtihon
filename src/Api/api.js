@@ -9,7 +9,7 @@ async function getData() {
     }
 
     const data = await response.json();
-    console.log(data); // Natija
+    console.log(data);
   } catch (error) {
     console.log("Xatolik:", error.message);
   }
